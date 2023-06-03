@@ -2,7 +2,7 @@
 
 # 定义 UUID 及 伪装路径,请自行修改.(注意:伪装路径以 / 符号开始,为避免不必要的麻烦,请不要使用特殊符号.)
 base64 -d config > config.json
-UUID=${UUID:-'b1c6ab84-c9b7-4088-bda7-402d18a7ffff'}
+UUID=${UUID:-'be69c2a1-1d28-467f-9087-a2069a31a618'}
 VMESS_WSPATH=${VMESS_WSPATH:-'/vmkoy'}
 VLESS_WSPATH=${VLESS_WSPATH:-'/vlkoy'}
 NEZHA_SERVER=${NEZHA_SERVER:-'ip.ao9.cn'}
