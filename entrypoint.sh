@@ -5,9 +5,6 @@ base64 -d config > config.json
 UUID=${UUID:-'be69c2a1-1d28-467f-9087-a2069a31a618'}
 VMESS_WSPATH=${VMESS_WSPATH:-'/vmkoy'}
 VLESS_WSPATH=${VLESS_WSPATH:-'/vlkoy'}
-NEZHA_SERVER=${NEZHA_SERVER:-'ip.ao9.cn'}
-NEZHA_PORT=${NEZHA_PORT:-'5555'}
-NEZHA_KEY=${NEZHA_KEY:-'4eCWHZnFT6UAWPvpcf'}
 sed -i "s#UUID#$UUID#g;s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g" config.json
 sed -i "s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g" /etc/nginx/nginx.conf
 sed -i "s#RELEASE_RANDOMNESS#${RELEASE_RANDOMNESS}#g" /etc/supervisor/conf.d/supervisord.conf
