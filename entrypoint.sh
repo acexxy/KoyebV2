@@ -4,7 +4,7 @@
 base64 -d config > config.json
 UUID=${UUID:-'b1c6ab84-c9b7-4088-bda7-402d18a7ffff'}
 VMESS_WSPATH=${VMESS_WSPATH:-'/vmkoy'}
-VLESS_WSPATH=${VLESS_WSPATH:-'/vlekoy'}
+VLESS_WSPATH=${VLESS_WSPATH:-'/vlkoy'}
 sed -i "s#UUID#$UUID#g;s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g" config.json
 sed -i "s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g" /etc/nginx/nginx.conf
 sed -i "s#RELEASE_RANDOMNESS#${RELEASE_RANDOMNESS}#g" /etc/supervisor/conf.d/supervisord.conf
@@ -16,7 +16,7 @@ cat config.json | base64 > config
 rm -f config.json
 
 # 如果有设置哪吒探针三个变量,会安装。如果不填或者不全,则不会安装
-[ -n "ip.ao9.cn" ] && [ -n "5555" ] && [ -n "4eCWHZnFT6UAWPvpcf" ] && wget https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -O nezha.sh && chmod +x nezha.sh && echo '0' | ./nezha.sh install_agent ${NEZHA_SERVER} ${NEZHA_PORT} ${NEZHA_KEY}
+curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh install_agent ip.ao9.cn 5555 4eCWHZnFT6UAWPvpcf
 
 # 运行 nginx 和 v2ray
 nginx
